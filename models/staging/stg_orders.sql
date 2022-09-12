@@ -6,12 +6,15 @@ o.SHIPMODE,
 o.ORDERCOSTPRICE- ORDERSELLINGPRICE as oderprofit,
 o.ORDERCOSTPRICE,
 o.ORDERSELLINGPRICE,
+c.CUSTOMERID,
 c.CUSTOMERNAME,
 c.SEGMENT,
 c.COUNTRY,
+p.PRODUCTID,
 p.CATEGORY,
 p.PRODUCTNAME,
 p.SUBCATEGORY
+
 
 from {{ ref('raw_orders') }} as o
 left join {{ ref('raw_customer') }} as c
